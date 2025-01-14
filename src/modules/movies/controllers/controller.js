@@ -2,25 +2,19 @@ import fs from "fs";
 import { readJSONFile } from "../../../utils/utils.js";
 
 const movieList = (req, res) => {
-  const movies = { name: "adad" };
+  let movies = readJSONFile("movies");
 
   const { limit, search } = req.query;
 
-  if (limit) {
-    const result = [];
-    for (let i = 0; i <= limit; i++) {
-      result.push(movies[i]);
-    }
-
-    res.send(result);
-  }
-
   if (search) {
-    const result = movies.filter((movie) => movie.title.includes(search));
-
-    res.send(result);
+    movies = movies.filter((movie) =>
+      movie.title.toLowerCase().includes(search)
+    );
   }
 
+  if (limit) {
+    movies = movies.slice(0, Number(limit));
+  }
   res.send(movies);
 };
 

@@ -5,7 +5,7 @@ const log = (message) => {
 };
 
 const readJSONFile = (filePath) => {
-  return JSON.parse(fs.readFileSync(filePath));
+  return JSON.parse(fs.readFileSync(`./${filePath}.json`));
 };
 
 export { log, readJSONFile };
