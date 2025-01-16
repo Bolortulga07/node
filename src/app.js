@@ -12,7 +12,7 @@ app.get("/", (req, res) => {
   //html info page
   const html = fs.readFileSync("./index.html");
 
-  res.setHeader("Content-type", "text/html");
+  res.setHeader("Content-type: application/json", "text/html");
   res.send(html);
 });
 
