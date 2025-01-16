@@ -15,7 +15,7 @@ const movieList = (req, res) => {
   if (limit) {
     movies = movies.slice(0, Number(limit));
   }
-  res.send(movies);
+  res.send(movies.toString());
 };
 
 const movieDetail = (req, res) => {
@@ -24,7 +24,7 @@ const movieDetail = (req, res) => {
 
   const movie = movies.find((movie) => movie.id === parseInt(id));
 
-  res.send(movie);
+  res.send(movies.toString());
 };
 
 export { movieList, movieDetail };

@@ -1,5 +1,5 @@
-import { test } from "./src/test.js";
+import { app } from "./src/app.js";
 
-test.listen(3000, () => {
+app.listen(3000, () => {
   console.log("server listening on 3001");
 });

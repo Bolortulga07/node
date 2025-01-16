@@ -23,7 +23,7 @@ app.post("/movies", (req, res) => {
 
   movies.push(movie);
 
-  fs.writeFileSync("./movies.json", movies);
+  fs.writeFileSync("./movies.json", JSON.stringify(movies));
 
   res.send({ success: true, message: "movie added" });
 });
