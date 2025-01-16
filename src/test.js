@@ -23,7 +23,7 @@ test.post("/books", (req, res) => {
 
   books.push(book);
 
-  fs.writeFileSync("./books.json", books);
+  fs.writeFileSync("./books.json", JSON.stringify(books));
 
   res.send({ success: true, message: "book added" });
 });
